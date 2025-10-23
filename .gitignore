@@ -1,0 +1,20 @@
+# Maven target
+/target/
+
+# Eclipse/IDEA
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+
+# Log files
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Package files
+*.jar
+*.war
