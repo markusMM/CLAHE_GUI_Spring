@@ -25,8 +25,8 @@ public class ClaheApplication {
 
     @PostMapping(value = "/clahe", produces = MediaType.APPLICATION_JSON_VALUE)
     public OutputResponse applyClahe(@RequestParam MultipartFile file,
-                                    @RequestParam(defaultValue = "2.0") double clipLimit,
-                                    @RequestParam(defaultValue = "8") int tileGridSize) throws IOException {
+                                     @RequestParam(defaultValue = "2.0") double clipLimit,
+                                     @RequestParam(defaultValue = "8") int tileGridSize) throws IOException {
 
         // Bild in Mat konvertieren
         Mat img = Imgcodecs.imdecode(new MatOfByte(file.getBytes()), Imgcodecs.IMREAD_COLOR);

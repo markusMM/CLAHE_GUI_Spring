@@ -1,20 +1,18 @@
-# Maven target
-/target/
-
-# Eclipse/IDEA
-/.idea/
-/*.iml
-/.classpath
-/.project
-/.settings/
-
-# Log files
-*.log
-
-# OS Files
-.DS_Store
-Thumbs.db
-
-# Package files
+# Java
+*/target/
+*.class
 *.jar
 *.war
+
+# Node
+*/node_modules/
+*/dist/
+*/build/
+
+# IDEs
+/.idea/
+/.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
