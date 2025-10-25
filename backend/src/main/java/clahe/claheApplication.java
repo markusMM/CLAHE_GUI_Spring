@@ -1,3 +1,5 @@
+package clahe;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.MediaType;
@@ -7,6 +9,7 @@ import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.core.CvType;
+import nu.pattern.OpenCV;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -15,12 +18,14 @@ import java.util.Base64;
 @SpringBootApplication
 @RestController
 @RequestMapping("/api/image")
-public class ClaheApplication {
+public class claheApplication {
 
-    static { System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
+    static { 
+        OpenCV.loadLocally();
+    }
 
     public static void main(String[] args) {
-        SpringApplication.run(ClaheApplication.class, args);
+        SpringApplication.run(claheApplication.class, args);
     }
 
     @PostMapping(value = "/clahe", produces = MediaType.APPLICATION_JSON_VALUE)
