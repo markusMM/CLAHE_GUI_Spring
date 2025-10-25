@@ -41,9 +41,8 @@
         <dependency>
             <groupId>org.openpnp</groupId>
             <artifactId>opencv</artifactId>
-            <version>4.10.0-0</version>
+            <version>4.7.0-0</version>
         </dependency>
-
         <!-- Optional: for compatibility if javax.annotation is missing -->
         <dependency>
             <groupId>javax.annotation</groupId>
