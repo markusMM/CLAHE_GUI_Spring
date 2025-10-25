@@ -19,8 +19,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build Spring Boot
+        working-directory: ./backend
         run: mvn clean package
       - name: Run backend unit tests
+        working-directory: ./backend
         run: mvn test
       - name: Docker build backend
         run: docker build -t my-backend ./backend
