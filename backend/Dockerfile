@@ -1,6 +1,10 @@
 # backend/Dockerfile
 FROM openjdk:17-jdk-alpine
 WORKDIR /app
-COPY backend/target/myapp.jar myapp.jar
-ENTRYPOINT ["java", "-jar", "myapp.jar"]
+
+# Copy the built JAR file into the container
+COPY target/clahe-backend-1.0.0.jar app.jar
+
+# Run it
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 EXPOSE 8080
