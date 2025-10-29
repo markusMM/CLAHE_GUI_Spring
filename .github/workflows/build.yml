@@ -32,7 +32,8 @@ jobs:
       # test the build
       - name: Run container smoke test
         run: |
-          docker run --rm -p 8081:80 clahe-frontend curl -I http://localhost:8081
+          docker run --rm -p 8081:80 clahe-frontend 
+          curl -I http://localhost:8081
       # Optional: push to registry for later deployment
       # - name: Push image to Docker Hub
       #   run: docker push clahe-frontend
