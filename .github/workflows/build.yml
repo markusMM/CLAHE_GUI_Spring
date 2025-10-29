@@ -33,7 +33,12 @@ jobs:
       - name: Run container smoke test
         run: |
           docker run -d -p 8081:80 --name clahe-frontend-test clahe-frontend
-          curl -I http://localhost:8081
+          # Retry curl until it succeeds or timeout
+          for i in {1..10}; do
+            curl -I http://localhost:8081 && break
+            echo "Waiting for container to be ready..."
+            sleep 3
+          done
           docker stop clahe-frontend-test
       # Optional: push to registry for later deployment
       # - name: Push image to Docker Hub
