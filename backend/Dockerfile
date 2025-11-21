@@ -11,6 +11,14 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine
+
+# opencv
+RUN apt-get update
+RUN apt-get install -y libstdc++6
+RUN rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache libstdc++
+RUN ldd /path/to/libopencv_java470.so
+
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
