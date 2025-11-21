@@ -21,8 +21,8 @@ function App() {
       body: formData,
     });
     const data = await res.json();
-    setOriginal(`data:image/png;base64,${data.originalImage}`);
-    setProcessed(`data:image/png;base64,${data.claheImage}`);
+    setOriginal(`data:image/png;base64,${data.originalBase64}`);
+    setProcessed(`data:image/png;base64,${data.claheBase64}`);
   };
 
   return (
